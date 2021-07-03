@@ -3,7 +3,7 @@ name: gets triggered from another workflow
 # Controls when the action will run. Triggers the workflow on repository_dispatch and filters by type of event (i.e. `event_type`)
 on:
   repository_dispatch:
-    types: [functional-tests1 , functional-tests2]
+    types: [functional-tests]
 
 jobs:
   build:
@@ -17,6 +17,7 @@ jobs:
           echo Add other custom actions to build,
           echo test, and deploy your project.
     # Consuming workflow in parent repository
-      - name: Print custom message
-        run: echo ${{ github.event.client_payload.message.foo }}     # bar
+#    steps:
+#       - name: Print custom message
+#         run: echo ${{ github.event.client_payload.message.foo }}     # bar
 
